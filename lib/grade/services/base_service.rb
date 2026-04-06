@@ -1,0 +1,19 @@
+module Grade
+  module Services
+    class BaseService
+      def self.call(...)
+        new(...).call
+      end
+
+      private
+
+      def sucess(data)
+        { ok: true, data: data }
+      end
+
+      def failure(message)
+        { ok: false,  error: message }
+      end
+    end
+  end 
+end
