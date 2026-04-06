@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require_relative "../lib/grade"
+
+Grade::CLI.start(ARGV)
