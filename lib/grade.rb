@@ -3,7 +3,7 @@ require "dotenv/load"
 require_relative "grade/version"
 require_relative "grade/ApiClient"
 require_relative "grade/services/base_service"
-require_relative "grade/services/classroom/list"
+require_relative "grade/services/classrooms/list"
 
 module Grade
   class CLI < Thor
