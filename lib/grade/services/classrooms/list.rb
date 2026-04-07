@@ -7,12 +7,12 @@ module Grade
         end
 
         def call
-         data = @client.get("classrooms")
-         success(data) 
+          data = @client.get("classrooms")
+          success(data) 
         rescue Faraday::UnauthorizedError
-         failure("Invalid API key.")
+          failure("Invalid API key.")
         rescue Faraday::ConnectionFailed
-         failure("No connection to the API.")
+          failure("No connection to the API.")
         end
       end
     end
