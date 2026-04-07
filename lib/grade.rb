@@ -29,16 +29,15 @@ module Grade
 
       if result[:ok]
         spinner.success(pastel.green("Done!"))
-        names = []
-        cods = []
-        infos = []
+        time_slot_now = "tab"
 
-        table = TTY::Table.new(header: ["Class code", "Class name", "Room"])
+        table = TTY::Table.new(header: ["Class code", "Class name", "Room", "Time slot"])
         result[:data].each do |item|
-          table << [item["cod"], item["name"], item["room"]]
+          time_slot_formatted = item["time_slot"]==time_slot_now ? pastel.yellow(item["time_slot"].upcase) : item["time_slot"].upcase
+          table << [item["cod"], item["name"], item["room"], time_slot_formatted]
         end
 
-        say table.render(:unicode, alignments: [:center, :left, :center])
+        say table.render(:unicode, alignments: [:center, :left, :center, :center])
       else
         spinner.error("Error!")
         say result[:error], :red
