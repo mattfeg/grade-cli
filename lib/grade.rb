@@ -7,6 +7,7 @@ require_relative "grade/version"
 require_relative "grade/ApiClient"
 require_relative "grade/services/base_service"
 require_relative "grade/services/classrooms/list"
+require_relative "grade/services/classrooms/now"
 require_relative "grade/concerns/has_client"
 require_relative "grade/commands/classrooms"
 

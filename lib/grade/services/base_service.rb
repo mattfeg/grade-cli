@@ -7,7 +7,7 @@ module Grade
 
       private
 
-      def sucess(data)
+      def success(data)
         { ok: true, data: data }
       end
 
