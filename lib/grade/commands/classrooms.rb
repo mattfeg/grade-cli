@@ -26,7 +26,7 @@ module Grade
       def format_table(result:)
         table = TTY::Table.new(header: ["Class code", "Class name", "Room", "Time slot"])
           result[:data].each do |item| 
-            table << [item["cod"], item["name"], item["room"], item["time_slot"].upcase]
+          table << [item["cod"], item["name"], item["room"].upcase, item["time_slot"].upcase]
           end
         table
       end
