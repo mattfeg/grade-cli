@@ -20,7 +20,6 @@ module Grade
       def loading_search
         @spinner = TTY::Spinner.new("[:spinner] Searching...", format: :dots)
         @spinner.auto_spin
-        sleep(1)
       end
 
       def format_table(result:)

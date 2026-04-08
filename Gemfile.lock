@@ -8,12 +8,19 @@ GEM
       logger
     faraday-net_http (3.4.2)
       net-http (~> 0.5)
+    ffi (1.17.4)
+    ffi (1.17.4-arm64-darwin)
     json (2.19.3)
     logger (1.7.0)
     net-http (0.9.1)
       uri (>= 0.11.1)
+    og-corefoundation (0.2.3)
+      ffi
     pastel (0.8.0)
       tty-color (~> 0.5)
+    ruby-keychain (0.4.0)
+      ffi
+      og-corefoundation (~> 0.2.0)
     strings (0.2.1)
       strings-ansi (~> 0.2)
       unicode-display_width (>= 1.5, < 3.0)
@@ -41,6 +48,7 @@ DEPENDENCIES
   dotenv (~> 3.2)
   faraday (~> 2.14)
   pastel (~> 0.8.0)
+  ruby-keychain
   thor (~> 1.5)
   tty-spinner (~> 0.9.3)
   tty-table (~> 0.12.0)

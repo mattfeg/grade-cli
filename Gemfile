@@ -15,3 +15,5 @@ gem "tty-spinner", "~> 0.9.3"
 gem "pastel", "~> 0.8.0"
 
 gem "tty-table", "~> 0.12.0"
+
+gem "ruby-keychain"

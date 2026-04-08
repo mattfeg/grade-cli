@@ -1,11 +1,18 @@
 module Grade
   module Concerns
     module HasClient
+      include HasKeychain
+
       private
+
       def client
-        key = "changeme"
-        @client ||= ApiClient.new(api_key: key)
-      end  
+        token = read_token
+        unless token
+          say "Not authenticated. Run `grade auth login`", :red
+          exit 1
+        end
+        @client ||= ApiClient.new(api_key: token)
+      end
     end
   end
 end
