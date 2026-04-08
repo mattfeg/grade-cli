@@ -1,35 +1,36 @@
-require "thor"
-require "dotenv/load"
-require "keychain"
-require "tty-spinner"
-require "tty-table"
-require "pastel"
-require_relative "grade/version"
-require_relative "grade/ApiClient"
-require_relative "grade/services/base_service"
-require_relative "grade/services/classrooms/list"
-require_relative "grade/services/classrooms/now"
-require_relative "grade/services/auth/login"
-require_relative "grade/concerns/has_keychain"
-require_relative "grade/concerns/has_client"
-require_relative "grade/commands/classrooms"
-require_relative "grade/commands/auth"
+# frozen_string_literal: true
+
+require 'thor'
+require 'dotenv/load'
+require 'keychain'
+require 'tty-spinner'
+require 'tty-table'
+require 'pastel'
+require_relative 'grade/version'
+require_relative 'grade/ApiClient'
+require_relative 'grade/services/base_service'
+require_relative 'grade/services/classrooms/list'
+require_relative 'grade/services/classrooms/now'
+require_relative 'grade/services/auth/login'
+require_relative 'grade/concerns/has_keychain'
+require_relative 'grade/concerns/has_client'
+require_relative 'grade/commands/classrooms'
+require_relative 'grade/commands/auth'
 
 module Grade
   class CLI < Thor
-    package_name "Grade"
+    package_name 'Grade'
 
-    desc "auth SUBCOMMAND", "Manage authentication"
-    subcommand "auth", Commands::Auth
+    desc 'auth SUBCOMMAND', 'Manage authentication'
+    subcommand 'auth', Commands::Auth
 
-    desc "classrooms SUBCOMMAND", "Manage classrooms"
-    subcommand "classrooms", Commands::Classrooms
+    desc 'classrooms SUBCOMMAND', 'Manage classrooms'
+    subcommand 'classrooms', Commands::Classrooms
 
-    desc "version", "Shows software version"
-    map ["--version","-v"] => :version
+    desc 'version', 'Shows software version'
+    map ['--version', '-v'] => :version
     def version
       say "Grade V#{Grade::VERSION}"
     end
   end
 end
-

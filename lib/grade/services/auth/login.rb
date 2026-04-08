@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Grade
   module Services
     module Auth
@@ -9,14 +11,15 @@ module Grade
         end
 
         def call
-          result = @client.post("/users/sign_in", { user: { email: @email, password: @password } })
-          token = result[:headers]["authorization"]&.sub("Bearer ", "")
-          return failure("Invalid credentials") unless token
+          result = @client.post('/users/sign_in', { user: { email: @email, password: @password } })
+          token = result[:headers]['authorization']&.sub('Bearer ', '')
+          return failure('Invalid credentials') unless token
+
           success(token)
         rescue Faraday::UnauthorizedError
-          failure("Invalid credentials")
+          failure('Invalid credentials')
         rescue Faraday::ConnectionFailed
-          failure("Could not connect to the server")
+          failure('Could not connect to the server')
         end
       end
     end

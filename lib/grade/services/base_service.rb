@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Grade
   module Services
     class BaseService
@@ -12,8 +14,8 @@ module Grade
       end
 
       def failure(message)
-        { ok: false,  error: message }
+        { ok: false, error: message }
       end
     end
-  end 
+  end
 end

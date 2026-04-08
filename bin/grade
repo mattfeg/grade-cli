@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
-require_relative "../lib/grade"
+# frozen_string_literal: true
+
+require_relative '../lib/grade'
 
 Grade::CLI.start(ARGV)

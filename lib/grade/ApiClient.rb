@@ -1,8 +1,10 @@
-require "faraday"
+# frozen_string_literal: true
+
+require 'faraday'
 
 module Grade
   class ApiClient
-    API_CLIENT_BASE_URL = ENV.fetch("API_CLIENT_BASE_URL")
+    API_CLIENT_BASE_URL = ENV.fetch('API_CLIENT_BASE_URL')
 
     def initialize(api_key: nil)
       @conn = Faraday.new(url: API_CLIENT_BASE_URL) do |f|
@@ -26,7 +28,7 @@ module Grade
     private
 
     def authorize(req)
-      req.headers["Authorization"] = "Bearer #{@api_key}"
+      req.headers['Authorization'] = "Bearer #{@api_key}"
     end
   end
 end

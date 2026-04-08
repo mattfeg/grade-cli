@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 module Grade
   module Concerns
     module HasKeychain
-      KEYCHAIN_SERVICE = "grade-cli"
-      KEYCHAIN_ACCOUNT = "jwt_token"
+      KEYCHAIN_SERVICE = 'grade-cli'
+      KEYCHAIN_ACCOUNT = 'jwt_token'
 
       private
 
